@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Toaster } from 'sonner@2.0.3';
+import { Toaster } from 'sonner';
 import { Home } from './components/Home';
 import { StreamsList } from './components/StreamsList';
 import { PublishStream } from './components/PublishStream';

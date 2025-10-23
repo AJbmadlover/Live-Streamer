@@ -3,7 +3,7 @@ import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { ArrowLeft, Video, VideoOff } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 interface PublishStreamProps {
   onNavigate: (screen: 'home' | 'watch' | 'publish') => void;
@@ -62,16 +62,23 @@ export function PublishStream({ onNavigate }: PublishStreamProps) {
     try {
       // Create WebSocket connection
       // Replace with your actual WebSocket server URL
-      const socket = new WebSocket('wss://yourserver.com/live');
+      const socket = new WebSocket('ws://localhost:8080');
       socketRef.current = socket;
 
       socket.onopen = () => {
         console.log('WebSocket connected');
         toast.success('Connected to streaming server');
+        socket.send(JSON.stringify({
+        type: "init",
+        role: "publisher",
+        publisherId: "Hello Basit", 
+        title: "My Stream"
+      }));
       };
 
       socket.onerror = (error) => {
         console.error('WebSocket error:', error);
+        console.log("Error connecting to the host")
         toast.error('Failed to connect to streaming server');
       };
 

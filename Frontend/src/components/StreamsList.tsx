@@ -7,6 +7,7 @@ import { VideoPlayerOverlay } from './VideoPlayerOverlay';
 
 interface Stream {
   id: string;
+  publisherId?: string;
   title: string;
   thumbnail: string;
   viewers: number;
@@ -21,6 +22,7 @@ interface StreamsListProps {
 const mockStreams: Stream[] = [
   {
     id: '1',
+    publisherId: 'streamA',
     title: 'Tech Talk: Web Development',
     thumbnail: 'https://images.unsplash.com/photo-1620246499779-77240d92a176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaXZlJTIwc3RyZWFtaW5nJTIwYnJvYWRjYXN0fGVufDF8fHx8MTc2MDk1ODc2M3ww&ixlib=rb-4.1.0&q=80&w=1080',
     viewers: 342,
@@ -28,6 +30,7 @@ const mockStreams: Stream[] = [
   },
   {
     id: '2',
+    publisherId: 'streamA',
     title: 'Gaming Session - Epic Adventures',
     thumbnail: 'https://images.unsplash.com/photo-1610041321024-0dff35bf9923?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYW1pbmclMjBzdHJlYW18ZW58MXx8fHwxNzYwOTY5NjYyfDA&ixlib=rb-4.1.0&q=80&w=1080',
     viewers: 1205,
@@ -35,6 +38,7 @@ const mockStreams: Stream[] = [
   },
   {
     id: '3',
+    publisherId: 'streamA',
     title: 'Live Music Performance',
     thumbnail: 'https://images.unsplash.com/photo-1583778010981-15c004e805bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMGNvbmNlcnQlMjBwZXJmb3JtYW5jZXxlbnwxfHx8fDE3NjA5NjMyMTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
     viewers: 892,
